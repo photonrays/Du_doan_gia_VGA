@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "dash": "^3.25.15",
-    "plotly": "^1.0.6"
-  }
-}
