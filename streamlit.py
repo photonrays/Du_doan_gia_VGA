@@ -8,12 +8,7 @@ st.set_page_config(
     page_title="VGA Report",
     page_icon="🧊",
     layout="wide",
-    initial_sidebar_state="expanded",
-    menu_items={
-        'Get Help': 'https://www.extremelycoolapp.com/help',
-        'Report a bug': "https://www.extremelycoolapp.com/bug",
-        'About': "# This is a header. This is an *extremely* cool app!"
-    }
+    initial_sidebar_state="collapsed"
 )
 
 st.title("VGA Report")
@@ -73,8 +68,8 @@ def plot_numerical_features(selected_feature):
 
     return fig
 
-st.header("Correlation of Numeral features")
-selected_feature = st.selectbox("Select a numerical feature:", [col for col in df.columns if pd.api.types.is_numeric_dtype(df[col]) and col != 'Price'])
+st.header("Correlation of numeric features")
+selected_feature = st.selectbox("Select a numeric feature:", [col for col in df.columns if pd.api.types.is_numeric_dtype(df[col]) and col != 'Price'])
 fig_numerical = plot_numerical_features(selected_feature)
 st.pyplot(fig_numerical)
 
